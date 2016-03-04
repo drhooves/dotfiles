@@ -1,0 +1,21 @@
+- defaults:
+        link: 
+                relink: true
+                create: true
+
+- clean: ['~', '~/.config']
+
+- link:
+        ~/.bashrc: bashrc
+        ~/.profile: profile
+        ~/.config/user-dirs.dirs: config/user-dirs.dirs
+        ~/.config/git: config/git
+        ~/.config/pacman: config/pacman
+        ~/.config/i3: config/i3
+        ~/.config/zathura: config/zathura
+        ~/.config/udiskie: config/udiskie
+
+- shell:
+        - [git submodule update --init --recursive
+          && cp -n vim-plug/plug.vim ~/.config/nvim/autoload/plug.vim,
+          Installing submodules]

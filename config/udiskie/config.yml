@@ -1,0 +1,7 @@
+program_options:
+        # Configure defaults for command line options
+        no-file-manager: true # [bool] Disable browsing.
+
+ignore_device:
+        # Customize udiskie's ignore rules.
+        - id_label: d3l4y_backup

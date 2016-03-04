@@ -1,0 +1,129 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# use "Super" as modifier
+set $mod Mod4		
+floating_modifier $mod
+
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+####################
+# Numbered ws.
+bindsym $mod+apostrophe  workspace back_and_forth
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+
+
+####################
+# Autostart
+# dex must be installed
+exec --no-startup-id dex -ae i3
+
+
+####################
+# Applications
+bindsym $mod+Return exec --no-startup-id st
+bindsym $mod+b exec firefox
+bindsym $mod+d exec --no-startup-id dmenu_run
+#
+## Volume
+for_window [class="Pavucontrol"] floating enable
+bindsym $mod+comma exec ~/.local/lib/wmscripts/pa_vol -5%
+bindsym $mod+period exec ~/.local/lib/wmscripts/pa_vol +5%
+bindsym $mod+m exec ~/.local/lib/wmscripts/pa_mute
+#
+## Spotify
+# assign [class="Spotify"] music
+for_window [class="Spotify"] move container to workspace music, focus
+bindsym $mod+Shift+m workspace music
+bindsym $mod+Shift+greater exec --no-startup-id playerctl --player=spotify next
+bindsym $mod+Shift+less exec --no-startup-id playerctl --player=spotify previous
+bindsym $mod+Shift+p exec --no-startup-id playerctl --player=spotify play-pause
+
+
+####################
+# Window management
+bindsym $mod+backslash split h
+bindsym $mod+minus split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+c move position center
+bindsym $mod+q kill
+#
+## Window movement
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+#
+## Focus movement
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+#
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+#
+## Container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+#
+## Resize windows
+mode "resize" {
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+####################
+# Visual stuff
+font pango:Source Code Pro Semi-Bold 9
+new_window normal 2
+#
+## Window colors        |border |back   |text   |indicator
+client.focused          #00897B #00695C #ffffff #1DE9B6
+client.focused_inactive #616161 #424242 #7a7a7a #424242
+client.unfocused        #757575 #616161 #909090 #757575
+client.urgent           #EF5350 #E53935 #ffffff #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000
+#
+## Window specific
+for_window [class="st"] border pixel 2
+
+
+####################
+# i3bar
+#
+# bar {
+#         status_command i3status
+# }
+#
