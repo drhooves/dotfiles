@@ -14,7 +14,9 @@
         ~/.config/i3: config/i3
         ~/.config/zathura: config/zathura
         ~/.config/udiskie: config/udiskie
-        ~/pkgs/st/config.h: st/config.h
+        ~/pkgs/st/config.h:
+                path: st/config.h
+                force: true
 
 - shell:
         - [git submodule update --init --recursive
