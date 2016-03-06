@@ -14,6 +14,7 @@ PS1='\[\e[1;37m\]\w$(__git_ps1 " (%s)") [$?]\$ \[\e[0m\]'
 
 alias ls='ls --color=auto'
 alias pdf='zathura --fork'
+alias nspawn='systemd-nspawn'
 
 # nvim aliases
 alias vi='nvim'
