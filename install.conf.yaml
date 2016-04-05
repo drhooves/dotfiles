@@ -12,7 +12,6 @@
         ~/.config/git: config/git
         ~/.config/pacman: config/pacman
         ~/.config/i3: config/i3
-        ~/.config/zathura: config/zathura
         ~/.config/udiskie: config/udiskie
         ~/.config/nvim/init.vim: config/nvim/init.vim
         ~/pkgs/st/config.h:
@@ -21,5 +20,6 @@
 
 - shell:
         - [git submodule update --init --recursive
+          && mkdir -p ~/.config/nvim/autoload
           && cp -n vim-plug/plug.vim ~/.config/nvim/autoload/plug.vim,
           Installing submodules]
