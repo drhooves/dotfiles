@@ -25,5 +25,10 @@ export EDITOR=nvim
 
 ##################
 # Debian packaging
-export DEBMAIL="m.hovorka@live.de"
+export DEBEMAIL="m.hovorka@live.de"
 export DEBFULLNAME="Markus Hovorka"
+
+############
+# arduino-mk
+export ARDUINO_DIR=/usr/share/arduino
+export ARDMK_DIR=/usr/share/arduino
