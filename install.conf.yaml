@@ -14,6 +14,7 @@
         ~/.config/i3: config/i3
         ~/.config/udiskie: config/udiskie
         ~/.config/nvim/init.vim: config/nvim/init.vim
+        ~/.config/pulse/default.pa: config/pulse/default.pa
 
 - shell:
         - [git submodule update --init --recursive
