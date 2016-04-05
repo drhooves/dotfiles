@@ -14,9 +14,6 @@
         ~/.config/i3: config/i3
         ~/.config/udiskie: config/udiskie
         ~/.config/nvim/init.vim: config/nvim/init.vim
-        ~/pkgs/st/config.h:
-                path: st/config.h
-                force: true
 
 - shell:
         - [git submodule update --init --recursive
