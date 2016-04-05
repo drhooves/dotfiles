@@ -6,12 +6,10 @@
 [[ $- != *i* ]] && return
 
 source ~/.local/share/git/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE="true"
-GIT_PS1_SHOWSTASHSTATE="true"
-GIT_PS1_SHOWUNTRACKEDFILES="true"
 
 PS1='\[\e[1;37m\]\w$(__git_ps1 " (%s)") [$?]\$ \[\e[0m\]'
 
+alias grep='grep --color=always'
 alias ls='ls --color=auto'
 alias pdf='zathura --fork'
 alias nspawn='systemd-nspawn'
