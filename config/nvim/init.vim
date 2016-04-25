@@ -3,20 +3,19 @@
 " ---
 call plug#begin('~/.config/nvim/plugged')
 
-silent Plug 'lervag/vimtex'
-
 Plug 'vim-pandoc/vim-pandoc-syntax' 
 Plug 'djjcast/mirodark'
 Plug '29decibel/codeschool-vim-theme'
 Plug 'sudar/vim-arduino-syntax'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
 " --------------------
-" vim-latex
+" vimtex
 " ---
-" set grepprg="grep -nH $*"
-" let g:tex_flavor='latex'
+let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'mupdf'
 
 " --------------------
 " Theme Stuff
@@ -62,7 +61,7 @@ au!
 
 " For all text files set 'textwidth' to 78 characters.
  autocmd FileType text setlocal textwidth=78
-
  autocmd FileType java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+ autocmd FileType tex setlocal tabstop=4 shiftwidth=4
 
 augroup END
