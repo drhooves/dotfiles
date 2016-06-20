@@ -32,6 +32,8 @@ syntax on
 set ruler			" show the cursor position all the time
 set clipboard=unnamedplus	" Use clipboard as unnamed register
 set mouse-=a
+set wildmode=longest, list
+set wildmenu
 
 
 " --------------------
@@ -60,8 +62,10 @@ augroup filetype_stuff
 au!
 
 " For all text files set 'textwidth' to 78 characters.
- autocmd FileType text setlocal textwidth=78
+ autocmd FileType text setlocal textwidth=80
+ autocmd FileType markdown setlocal textwidth=80
  autocmd FileType java setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
- autocmd FileType tex setlocal tabstop=4 shiftwidth=4
+ autocmd FileType tex setlocal textwidth=80 tabstop=4 shiftwidth=4
+ autocmd FileType cpp setlocal tabstop=4 shiftwidth=4
 
 augroup END
